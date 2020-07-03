@@ -281,6 +281,7 @@ class HomePage extends StatelessWidget {
 
   Widget getTodoCardWidget(AsyncSnapshot<List<Todo>> snapshot) {
     if (snapshot.hasData) {
+      print('data ${snapshot.data.length}');
       return snapshot.data.length != 0 ? ListView.builder(
         itemCount: snapshot.data.length,
           itemBuilder: (context, itemPosition) {
