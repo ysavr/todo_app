@@ -6,3 +6,8 @@ class Fetch extends PostEvent {
   @override
   String toString() => 'Fetch';
 }
+
+class Reset extends PostEvent {
+  @override
+  String toString() => 'Reset';
+}

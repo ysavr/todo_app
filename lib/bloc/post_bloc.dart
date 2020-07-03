@@ -39,6 +39,12 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       } catch (_) {
         yield PostError();
       }
+    } else if (event is Reset){
+      print('reset event...');
+      (state as PostLoaded).posts.clear();
+      yield PostUninitialized();
+      this.add(Fetch());
+      return;
     }
   }
 
